@@ -1,0 +1,42 @@
+<div class="container">
+  <h2 class="text-center text-light my-5">Settings</h2>
+
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form (ngSubmit)="saveSettings()">
+        <div class="form-group">
+          <label for="work">Pomodoro Duration (minutes):</label>
+          <input type="number" class="form-control" id="work" [(ngModel)]="workDuration" name="work">
+        </div>
+        <div class="form-group">
+          <label for="shortBreak">Short Break Duration (minutes):</label>
+          <input type="number" class="form-control" id="shortBreak" [(ngModel)]="shortBreakDuration" name="shortBreak">
+        </div>
+        <div class="form-group">
+          <label for="longBreak">Long Break Duration (minutes):</label>
+          <input type="number" class="form-control" id="longBreak" [(ngModel)]="longBreakDuration" name="longBreak">
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="autoStartBreaks" [(ngModel)]="autoStartBreaks" name="autoStartBreaks">
+          <label class="form-check-label" for="autoStartBreaks">Auto Start Breaks</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="autoStartPomodoros" [(ngModel)]="autoStartPomodoros" name="autoStartPomodoros">
+          <label class="form-check-label" for="autoStartPomodoros">Auto Start Pomodoros</label>
+        </div>
+        <div class="form-group">
+          <label for="longBreakInterval">Pomodoro Round</label>
+          <input type="number" class="form-control" id="longBreakInterval" [(ngModel)]="longBreakInterval" name="longBreakInterval">
+        </div>
+
+        <div class="form-group">
+          <label for="dailyGoal">Daily Goal:</label>
+          <input type="number" class="form-control" id="dailyGoal" [(ngModel)]="dailyGoal" name="dailyGoal">
+        </div>
+
+        <button type="submit" class="btn btn-danger btn-block my-3 rounded-pill btn-save w-100 text-center btn-lg">Save</button>
+      </form>
+    </div>
+  </div>
+
+</div>

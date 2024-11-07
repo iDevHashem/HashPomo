@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <div class="row text-center">
+    <div class="col-md-4 mb-3">
+      <div class="card text-bg-light shadow-sm">
+        <div class="card-body">
+          <h4 class="card-title">Hours Focused</h4>
+          <p class="card-text display-4">{{ totalFocusHours.toFixed(2) }} hrs</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card text-bg-light shadow-sm">
+        <div class="card-body">
+          <h4 class="card-title">Days Accessed</h4>
+          <p class="card-text display-4">{{ daysAccessed }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card text-bg-light shadow-sm">
+        <div class="card-body">
+          <h4 class="card-title">Day Streak</h4>
+          <p class="card-text display-4">{{ dayStreak }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12">
+      <h3 class="mb-4 text-light text-center">Daily Reports</h3>
+      <div class="list-group">
+        <div *ngFor="let report of dailyReports" class="list-group-item list-group-item-dark mb-3 shadow-sm p-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h5>{{ report.date }}</h5>
+              <p class="mb-1"><strong>Pomodoro Count:</strong> {{ report.pomodoroCount }}</p>
+              <p class="mb-1"><strong>Focus Time:</strong> {{ (report.totalFocusTime / 3600).toFixed(2) }} hrs</p>
+              <p class="mb-1"><strong>Short Breaks:</strong> {{ report.shortBreakCount }}</p>
+              <p class="mb-1"><strong>Long Breaks:</strong> {{ report.longBreakCount }}</p>
+              <p class="mb-1"><strong>Break Time:</strong> {{ (report.totalBreakTime / 3600).toFixed(2) }} hrs</p>
+            </div>
+            <i class="fas fa-calendar-day fa-3x text-primary"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
